@@ -8,6 +8,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import "./resizable.css"
 
 export const defaultDrawerWidth = 240;
 const minDrawerWidth = 50;
@@ -54,13 +55,9 @@ export default function CustomDrawer() {
   }, []);
 
   return (
-    <Drawer
-      className={classes.drawer}
-      variant="permanent"
-      PaperProps={{ style: { width: drawerWidth } }}
-    >
-      <div className={classes.toolbar} />
-      <div onMouseDown={e => handleMouseDown(e)} className={classes.dragger} />
+   <div className="resizable">
+      {/* <div className={classes.toolbar} />
+      <div onMouseDown={e => handleMouseDown(e)} className={classes.dragger} /> */}
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem button key={text}>
@@ -71,7 +68,6 @@ export default function CustomDrawer() {
           </ListItem>
         ))}
       </List>
-      <Divider />
-    </Drawer>
+      </div>
   );
 }
