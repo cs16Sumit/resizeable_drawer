@@ -1,0 +1,7 @@
+.resizable {
+    height: 1350px;
+    width: 250px;
+    border: 1px solid #333;
+    resize: horizontal;
+    overflow: auto;
+  }
